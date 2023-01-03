@@ -7,4 +7,4 @@
 #172.31.39.245 ansible_user=ec2-user ansible_port=22 
 
 [tomcatservers]
-172.31.33.45 ansible_user=ec2-user
+172.31.45.198 ansible_user=ec2-user
