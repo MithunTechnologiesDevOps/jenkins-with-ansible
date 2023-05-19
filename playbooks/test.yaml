@@ -1,14 +1,6 @@
 ---
 - hosts: all
-  become: true
-  gather_facts: no
   tasks:
-   - name: Install Softwares
-     yum:
-      name: "{{item}}"
-     with_items:
-      - git
-      - vim
-      - zip
-      - unzip
+   - name: Ping Servers
+    ping
 ...
