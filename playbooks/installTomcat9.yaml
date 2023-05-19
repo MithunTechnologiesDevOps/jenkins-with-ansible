@@ -1,3 +1,4 @@
+---
 - hosts: tomcatservers
   become: true
   tasks:
@@ -70,3 +71,4 @@
         state: started
         daemon_reload: yes
         enabled: yes
+...
