@@ -11,28 +11,28 @@
         shell: /sbin/nologin
     - name: Tomcat-9 Installation
       get_url:
-        url: https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.74/bin/apache-tomcat-9.0.74.tar.gz
+        url: https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.78/bin/apache-tomcat-9.0.78.tar.gz
         dest: /tmp/
     - name: copy
       copy:
-        src: /tmp/apache-tomcat-9.0.74.tar.gz
+        src: /tmp/apache-tomcat-9.0.78.tar.gz
         dest: /usr/local/
         remote_src: yes
     - name: Unpacking the archive
       unarchive:
-        src: /usr/local/apache-tomcat-9.0.74.tar.gz
+        src: /usr/local/apache-tomcat-9.0.78.tar.gz
         dest: /usr/local
         remote_src: yes
     - name: Change file ownership, group and permissions
       file:
-        path: /usr/local/apache-tomcat-9.0.74
+        path: /usr/local/apache-tomcat-9.0.78
         owner: tomcat
         group: tomcat
         recurse: yes
         state: directory
     - name: make tomcat symbolic link
       file:
-        src: /usr/local/apache-tomcat-9.0.74
+        src: /usr/local/apache-tomcat-9.0.78
         dest: /usr/local/tomcat9
         owner: tomcat
         group: tomcat
@@ -53,11 +53,11 @@
           User = tomcat
           Group = tomcat
           Type = oneshot
-          PIDFile =/usr/local/apache-tomcat-9.0.74/tomcat.pid
+          PIDFile =/usr/local/apache-tomcat-9.0.78/tomcat.pid
           RemainAfterExit = yes
-          ExecStart =/usr/local/apache-tomcat-9.0.74/bin/startup.sh
-          ExecStop =/usr/local/apache-tomcat-9.0.74/bin/shutdown.sh
-          ExecReStart =/usr/local/apache-tomcat-9.0.74/bin/shutdown.sh;/usr/local/apache-tomcat-9.0.74/bin/startup.sh
+          ExecStart =/usr/local/apache-tomcat-9.0.78/bin/startup.sh
+          ExecStop =/usr/local/apache-tomcat-9.0.78/bin/shutdown.sh
+          ExecReStart =/usr/local/apache-tomcat-9.0.78/bin/shutdown.sh;/usr/local/apache-tomcat-9.0.78/bin/startup.sh
           [Install]
           WantedBy = multi-user.target
     - name: chmod 755 tomcat.service
