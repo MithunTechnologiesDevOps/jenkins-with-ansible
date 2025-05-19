@@ -2,7 +2,7 @@
 #172.31.46.92 ansible_user=ec2-user ansible_port=22 ansible_ssh_private_key_file=/home/ec2-user/jenkinsansiblenode/hosts.pem
 
 
-#[tomcatservers]
+[tomcatservers]
  #localhost ansible_user=ec2-user
  172.31.13.134 ansible_user=ec2-user 
  #172.31.36.49 ansible_user=ec2-user
