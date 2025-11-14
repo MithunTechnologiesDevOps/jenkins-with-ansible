@@ -6,4 +6,6 @@
 
 172.31.24.116 ansible_user=ec2-user 
 
+172.31.27.234 ansible_user=ec2-user 
+
 
